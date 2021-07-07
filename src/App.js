@@ -1,25 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+// import { useState } from 'react';
+import 'bootswatch/dist/darkly/bootstrap.min.css';
+import { Route, Redirect, Switch } from 'react-router-dom';
+import { Container, Navbar } from 'react-bootstrap';
+import StartMenu from './containers/StartMenu';
+import Reviewer from './containers/Reviewer';
+import Configure from './containers/Configure';
+const App = () => {
+	return (
+		<div className='App'>
+			<Navbar bg='light' expand='lg'>
+				<Navbar.Brand href='#home'>👓 Sheet Reviewer 2.0 </Navbar.Brand>
+			</Navbar>
+			<Container className='App-body'>
+				<Switch>
+					<Route exact path='/'>
+						<Redirect to='/start' />
+					</Route>
+					<Route path='/start'>
+						<StartMenu />
+					</Route>
+					<Route path='/reviewer'>
+						<Reviewer />
+					</Route>
+					<Route path='/configure'>
+						<Configure />
+					</Route>
+				</Switch>
+			</Container>
+		</div>
+	);
+};
 
 export default App;
