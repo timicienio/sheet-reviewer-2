@@ -11,10 +11,16 @@ import {
 	Modal,
 	ListGroup,
 } from 'react-bootstrap';
+import { BsInfoCircleFill } from 'react-icons/bs';
+import ReactTooltip from 'react-tooltip';
 import ScoreButtons from './ScoreButtons';
 import { useState } from 'react';
 
-export default function ScoreButtonConfigurator({ state, dispatch }) {
+export default function ScoreButtonConfigurator({
+	state,
+	dispatch,
+	sheetColumns,
+}) {
 	const [currentScores, setCurrentScores] = useState([-9999]);
 
 	const [showEdit, setShowEdit] = useState(false);
@@ -55,6 +61,13 @@ export default function ScoreButtonConfigurator({ state, dispatch }) {
 		});
 	};
 
+	const onChangeSheetColumn = (index, value) => {
+		dispatch({
+			type: 'MODIFY_SCORE',
+			payload: { index: index, key: 'sheetColumn', value: value },
+		});
+	};
+
 	return (
 		<>
 			<Modal show={showEdit}>
@@ -64,7 +77,18 @@ export default function ScoreButtonConfigurator({ state, dispatch }) {
 					</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>
-					<h5>Tag</h5>
+					<h5>
+						Label{' '}
+						<BsInfoCircleFill
+							data-tip
+							data-for='label-tooltip'
+							style={{ fontSize: '0.8rem' }}
+						/>
+						<ReactTooltip id='label-tooltip'>
+							<span>Name of the sub-score</span>
+						</ReactTooltip>
+					</h5>
+
 					<InputGroup className='mb-3'>
 						<FormControl
 							placeholder="Recipient's username"
@@ -82,13 +106,28 @@ export default function ScoreButtonConfigurator({ state, dispatch }) {
 						</InputGroup.Append>
 					</InputGroup>
 
-					{state[editingIndex].type === 'Number' ? (
+					{state[editingIndex].type === 'Number' && (
 						<>
-							<h5>Number range</h5>
+							<h5>
+								Number range{' '}
+								<BsInfoCircleFill
+									data-tip
+									data-for='range-tooltip'
+									style={{ fontSize: '0.8rem' }}
+								/>
+								<ReactTooltip id='range-tooltip'>
+									<span>
+										Max. and min. value of number score;
+										largest range: 10
+									</span>
+								</ReactTooltip>
+							</h5>
+
 							<div
 								style={{
 									display: 'flex',
 									flexDirection: 'row',
+									marginBottom: '20px',
 								}}
 							>
 								<ButtonGroup>
@@ -124,7 +163,10 @@ export default function ScoreButtonConfigurator({ state, dispatch }) {
 										⬇
 									</Button>
 								</ButtonGroup>{' '}
-								<ListGroup horizontal>
+								<ListGroup
+									horizontal
+									style={{ margin: '0 10px 0 10px' }}
+								>
 									<ListGroup.Item>
 										{state[editingIndex].lower}
 									</ListGroup.Item>
@@ -167,9 +209,49 @@ export default function ScoreButtonConfigurator({ state, dispatch }) {
 								</ButtonGroup>{' '}
 							</div>
 						</>
-					) : (
-						<></>
 					)}
+					<h5>
+						Sheet column{' '}
+						<BsInfoCircleFill
+							data-tip
+							data-for='column-tooltip'
+							style={{ fontSize: '0.8rem' }}
+						/>
+						<ReactTooltip id='column-tooltip'>
+							<span>
+								The reviewer will post the scores on the
+								selected column. Select 'None' if not needed.
+							</span>
+						</ReactTooltip>
+						<Dropdown style={{ marginTop: '10px' }}>
+							<Dropdown.Toggle variant='secondary'>
+								{state[editingIndex].sheetColumn
+									? state[editingIndex].sheetColumn
+									: 'None'}
+							</Dropdown.Toggle>
+							<Dropdown.Menu>
+								<Dropdown.Item
+									onSelect={() =>
+										onChangeSheetColumn(editingIndex, null)
+									}
+								>
+									None
+								</Dropdown.Item>
+								{sheetColumns.map((item, index) => (
+									<Dropdown.Item
+										onSelect={() =>
+											onChangeSheetColumn(
+												editingIndex,
+												item
+											)
+										}
+									>
+										{item}
+									</Dropdown.Item>
+								))}
+							</Dropdown.Menu>
+						</Dropdown>
+					</h5>
 				</Modal.Body>
 				<Modal.Footer>
 					<Button
@@ -263,7 +345,7 @@ export default function ScoreButtonConfigurator({ state, dispatch }) {
 					</>
 				))}
 				<Row>
-					<Button onClick={onAddScore}>+ Add a sub-score</Button>
+					<Button onClick={onAddScore}>+ Add a scoring method</Button>
 				</Row>
 			</Container>
 		</>

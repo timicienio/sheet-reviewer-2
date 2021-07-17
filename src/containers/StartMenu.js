@@ -7,8 +7,10 @@ export default function StartMenu() {
 		<Row className='start-menu'>
 			<Col>
 				<Card className='start-menu-card'>
-					<Card.Body>
-						<Card.Title>✨ Start with new configuration</Card.Title>
+					<Card.Body className='start-menu-card-body'>
+						<Card.Title>
+							✨ Create new reviewer configuration
+						</Card.Title>
 						<Card.Subtitle className='mb-2 text-muted'>
 							<p>
 								Start with a new set of Google Sheet id, layout,
@@ -28,8 +30,10 @@ export default function StartMenu() {
 			</Col>
 			<Col>
 				<Card className='start-menu-card'>
-					<Card.Body>
-						<Card.Title>🎛 Use existing configuration</Card.Title>
+					<Card.Body className='start-menu-card-body'>
+						<Card.Title>
+							🎛 Use existing reviewer configuration
+						</Card.Title>
 						<Card.Subtitle className='mb-2 text-muted'>
 							Start by pasting your reviewer configuration here.
 						</Card.Subtitle>
@@ -42,9 +46,8 @@ export default function StartMenu() {
 									rows={3}
 								/>
 							</Form.Group>
-
-							<Button variant='primary'>Submit</Button>
 						</Form>
+						<Button variant='primary'>Submit</Button>
 					</Card.Body>
 				</Card>
 			</Col>

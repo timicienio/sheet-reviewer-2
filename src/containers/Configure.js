@@ -14,6 +14,7 @@ import DoneConfigure from '../components/DoneConfigure';
 import { useState, useEffect, useReducer } from 'react';
 import useGoogleSheets from 'use-google-sheets';
 import { Route, Switch, useHistory } from 'react-router';
+
 export default function Configure() {
 	const history = useHistory();
 	const [hasError, setHasError] = useState(false);
@@ -67,6 +68,7 @@ export default function Configure() {
 						tag: 'New Sub-score',
 						lower: 0,
 						upper: 10,
+						sheetColumns: null,
 					},
 				]);
 
@@ -92,8 +94,13 @@ export default function Configure() {
 	const [scoreButtonState, scoreButtonDispatch] = useReducer(
 		scoreButtonReducer,
 		[
-			{ type: 'Number', tag: 'Overall Score', lower: 0, upper: 10 },
-			// { type: 'number', tag: 'Overall Score', lower: 0, upper: 10 },
+			{
+				type: 'Number',
+				tag: 'Overall Score',
+				lower: 0,
+				upper: 10,
+				sheetColumn: null,
+			},
 		]
 	);
 
@@ -281,6 +288,7 @@ export default function Configure() {
 									<ScoreButtonsConfigurator
 										state={scoreButtonState}
 										dispatch={scoreButtonDispatch}
+										sheetColumns={sheetColumns}
 									/>
 									<div id='configurator-confirm'>
 										<Button

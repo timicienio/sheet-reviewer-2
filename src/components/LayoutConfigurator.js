@@ -10,6 +10,8 @@ import {
 } from 'react-bootstrap';
 import LayoutCardConfigurable from './LayoutCardConfigurable';
 import RowSelector from './RowSelector';
+import { BsInfoCircleFill } from 'react-icons/bs';
+import ReactTooltip from 'react-tooltip';
 
 export default function LayoutConfigurator({
 	state,
@@ -55,11 +57,23 @@ export default function LayoutConfigurator({
 				<Row>
 					<h3>📐 Step 2: Configure reviewer layout</h3>
 				</Row>
+
 				<RowSelector
 					currentRowIndex={currentRowIndex}
 					setCurrentRowIndex={setCurrentRowIndex}
 					numberRows={sheet ? sheet.data.length : 0}
 				/>
+				<BsInfoCircleFill
+					data-tip
+					data-for='range-tooltip'
+					style={{ fontSize: '0.8rem' }}
+				/>
+				<ReactTooltip id='range-tooltip'>
+					<span>
+						Select different rows to preview the review experience
+						with your data.
+					</span>
+				</ReactTooltip>
 				{state.map((row, rowIndex) => (
 					<Row>
 						{row.map((col, colIndex) => (
@@ -67,10 +81,7 @@ export default function LayoutConfigurator({
 								{col === '' ? (
 									<Card>
 										<Dropdown>
-											<Dropdown.Toggle
-												variant='secondary'
-												id='dropdown-basic'
-											>
+											<Dropdown.Toggle variant='secondary'>
 												Select a sheet column to display
 												here...
 											</Dropdown.Toggle>
