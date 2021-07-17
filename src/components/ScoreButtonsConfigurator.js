@@ -2,7 +2,6 @@ import {
 	Container,
 	Row,
 	Col,
-	Form,
 	FormControl,
 	InputGroup,
 	Button,
@@ -187,7 +186,7 @@ export default function ScoreButtonConfigurator({ state, dispatch }) {
 
 			<Container className='layout'>
 				<Row>
-					<h3>Step 3: Configure sub-scores</h3>
+					<h3>🎖 Step 3: Configure scoring methods</h3>
 				</Row>
 				{state.map(({ type, tag, lower, upper }, index) => (
 					<>

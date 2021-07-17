@@ -8,9 +8,12 @@ export default function StartMenu() {
 			<Col>
 				<Card className='start-menu-card'>
 					<Card.Body>
-						<Card.Title>Start with new configuration</Card.Title>
+						<Card.Title>✨ Start with new configuration</Card.Title>
 						<Card.Subtitle className='mb-2 text-muted'>
-							Start with a new set of Google Sheet id and layout
+							<p>
+								Start with a new set of Google Sheet id, layout,
+								and scoring method.
+							</p>
 						</Card.Subtitle>
 						<Button
 							variant='primary'
@@ -18,7 +21,7 @@ export default function StartMenu() {
 								history.push('./configure');
 							}}
 						>
-							Start a new reviewer
+							Start
 						</Button>
 					</Card.Body>
 				</Card>
@@ -26,16 +29,15 @@ export default function StartMenu() {
 			<Col>
 				<Card className='start-menu-card'>
 					<Card.Body>
-						<Card.Title>Use your existing configuration</Card.Title>
+						<Card.Title>🎛 Use existing configuration</Card.Title>
 						<Card.Subtitle className='mb-2 text-muted'>
-							Start by pasting your reviewer configuration (in
-							JSON format) here
+							Start by pasting your reviewer configuration here.
 						</Card.Subtitle>
 						<Form>
 							<Form.Group>
 								<Form.Control
 									// type='email'
-									placeholder='Paste configuration'
+									placeholder='Paste configuration (in JSON format)'
 									as='textarea'
 									rows={3}
 								/>

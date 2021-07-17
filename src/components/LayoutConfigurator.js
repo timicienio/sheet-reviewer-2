@@ -53,7 +53,7 @@ export default function LayoutConfigurator({
 		<>
 			<Container className='layout'>
 				<Row>
-					<h3>Step 2: Configure reviewer layout</h3>
+					<h3>📐 Step 2: Configure reviewer layout</h3>
 				</Row>
 				<RowSelector
 					currentRowIndex={currentRowIndex}

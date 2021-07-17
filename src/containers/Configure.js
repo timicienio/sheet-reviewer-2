@@ -130,7 +130,7 @@ export default function Configure() {
 	// console.log(layoutState);
 
 	useEffect(() => {
-		if (data.length > 1 && selectedSheetIndex === -1) setSelectSheet(true);
+		if (data.length >= 1 && selectedSheetIndex === -1) setSelectSheet(true);
 	}, [data, selectedSheetIndex]);
 
 	return (
@@ -139,7 +139,7 @@ export default function Configure() {
 				<Modal show={error}>
 					<Modal.Header>
 						<Modal.Title>
-							Step 1: Connect to your Google Sheet
+							📖 Step 1: Connect to your Google Sheet
 						</Modal.Title>
 					</Modal.Header>
 
@@ -194,8 +194,7 @@ export default function Configure() {
 					</Modal.Header>
 
 					<Modal.Body>
-						There are multiple sheets in your spreadsheet. Select
-						one to continue.
+						Select a sheet in your spreadsheet to continue.
 					</Modal.Body>
 					<Modal.Footer>
 						<Dropdown>

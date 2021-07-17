@@ -6,11 +6,16 @@ import { Container, Navbar } from 'react-bootstrap';
 import StartMenu from './containers/StartMenu';
 import Reviewer from './containers/Reviewer';
 import Configure from './containers/Configure';
+
+require('dotenv').config();
+
 const App = () => {
 	return (
 		<div className='App'>
 			<Navbar bg='light' expand='lg'>
-				<Navbar.Brand href='#home'>👓 Sheet Reviewer 2.0 </Navbar.Brand>
+				<Navbar.Brand href='/start'>
+					👓 Sheet Reviewer 2.0{' '}
+				</Navbar.Brand>
 			</Navbar>
 			<Container className='App-body'>
 				<Switch>
