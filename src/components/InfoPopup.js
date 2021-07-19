@@ -9,8 +9,6 @@ export default function InfoPopUp({ show, onHide, version }) {
 			</Modal.Header>
 			<Modal.Body>
 				<p>Version {version}</p>
-				<p>Made by Timmy Chen (desk2000) from RDOGS</p>
-				<p>總召對不起我不會再遲到了</p>
 			</Modal.Body>
 		</Modal>
 	);

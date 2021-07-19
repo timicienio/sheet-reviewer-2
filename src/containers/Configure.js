@@ -159,7 +159,7 @@ export default function Configure() {
 						<ol>
 							<li>Go to your Google Sheet spreadsheet page</li>
 							<li>
-								Share it with "Anyone with this link can view"
+								Share it with "Anyone with this link can edit"
 							</li>
 							<li>
 								Get "sheet id" from url of the sheet:
@@ -244,12 +244,12 @@ export default function Configure() {
 					{error ? (
 						<></>
 					) : loading ? (
-						<>
+						<div className='loading'>
 							<Spinner animation='border' show={loading} />{' '}
 							<span>
 								<br></br>Fetching spreadsheet...
 							</span>
-						</>
+						</div>
 					) : (
 						<Switch>
 							<Route path='/configure/layout'>

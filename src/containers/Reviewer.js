@@ -180,7 +180,14 @@ export default function Reviewer({ config }) {
 				<Modal.Body>{errorMessage.body}</Modal.Body>
 				{errorFooter(errorMessage.type)}
 			</Modal>
-			{loading && <Spinner animation='border' />}
+			{loading && (
+				<div className='loading'>
+					<Spinner animation='border' show={loading} />{' '}
+					<span>
+						<br></br>Fetching spreadsheet...
+					</span>
+				</div>
+			)}
 			{!loading && !showError && (
 				<Container className='layout'>
 					<RowSelector
@@ -199,9 +206,15 @@ export default function Reviewer({ config }) {
 									onScore={newScore =>
 										onScore(newScore, sheetColumn)
 									}
-									currentScore={Number(
-										rows[currentRowIndex][sheetColumn]
-									)}
+									currentScore={
+										type === 'Number'
+											? Number(
+													rows[currentRowIndex][
+														sheetColumn
+													]
+											  )
+											: rows[currentRowIndex][sheetColumn]
+									}
 								/>
 							</Row>
 						)
@@ -222,6 +235,13 @@ export default function Reviewer({ config }) {
 					</Container>
 				</Container>
 			)}
+			<Row>
+				<Col>
+					<p className='footer'>
+						Fine work by desk2000 | 總召對不起我不會再遲到了
+					</p>
+				</Col>
+			</Row>
 		</>
 	);
 }

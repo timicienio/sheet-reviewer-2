@@ -18,11 +18,12 @@ export default function DoneConfigure({ config }) {
 			<Row>
 				<Form>
 					<Form.Control
+						className='layout-json'
 						value={JSON.stringify(config)}
 						as='textarea'
 						rows={5}
 						readOnly
-					></Form.Control>
+					/>
 				</Form>
 			</Row>
 		</Container>

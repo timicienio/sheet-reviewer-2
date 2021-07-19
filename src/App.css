@@ -38,7 +38,13 @@
 }
 
 .footer {
+	margin-top: 20px;
 	color: #626976;
+}
+
+.loading {
+	position: relative;
+	top: 30vh;
 }
 
 .navbar {
@@ -58,8 +64,10 @@
 }
 
 .App-body {
-	/* margin: 10rem; */
-	height: 80rem;
+	margin-top: 15vh;
+	margin-bottom: 5vh;
+	/* top: 100px; */
+	/* height: 75vh; */
 }
 
 .start-menu {
@@ -69,7 +77,7 @@
 .start-menu-card {
 	margin: 0;
 	position: absolute;
-	top: 60%;
+	top: 40vh;
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
 
