@@ -21,6 +21,7 @@ export default function DoneConfigure({ config }) {
 						value={JSON.stringify(config)}
 						as='textarea'
 						rows={5}
+						readOnly
 					></Form.Control>
 				</Form>
 			</Row>

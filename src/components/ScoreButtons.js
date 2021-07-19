@@ -13,7 +13,9 @@ export default function ScoreButtons({
 			return (
 				<div className='score-buttons'>
 					<ListGroup horizontal>
-						<ListGroup.Item></ListGroup.Item>
+						<ListGroup.Item>
+							<span>{tag}</span>
+						</ListGroup.Item>
 						<ListGroup.Item
 							as='li'
 							onClick={() => onScore('Yes')}

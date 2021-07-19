@@ -68,6 +68,10 @@ export default function ScoreButtonConfigurator({
 		});
 	};
 
+	const onRemoveScore = index => {
+		dispatch({ type: 'DELETE_SCORE', payload: { index: index } });
+	};
+
 	return (
 		<>
 			<Modal show={showEdit}>
@@ -336,6 +340,9 @@ export default function ScoreButtonConfigurator({
 									<Button
 										variant='danger'
 										disabled={currentScores.length === 1}
+										onClick={() => {
+											onRemoveScore(index);
+										}}
 									>
 										Remove
 									</Button>

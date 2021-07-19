@@ -6,17 +6,6 @@
 	text-align: center;
 }
 
-.App-header {
-	background-color: #282c34;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	font-size: calc(10px + 2vmin);
-	color: white;
-}
-
 .App-link {
 	color: #61dafb;
 }
@@ -53,6 +42,8 @@
 }
 
 .navbar {
+	/* backdrop-filter: blur(5px); */
+	opacity: 80%;
 	margin: 1rem;
 	border-radius: 10px;
 }
@@ -60,6 +51,10 @@
 .navbar-brand {
 	font-weight: bold;
 	margin-left: 1.5rem;
+}
+
+.navbar-buttons {
+	margin-right: 30px;
 }
 
 .App-body {
@@ -74,7 +69,7 @@
 .start-menu-card {
 	margin: 0;
 	position: absolute;
-	top: 50%;
+	top: 60%;
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
 
@@ -109,11 +104,11 @@
 	height: 100%;
 }
 
-#configurator-confirm {
+.configurator-confirm {
 	margin: 1rem;
-	/* display: flex;
+	display: flex;
 	position: relative;
-	align-items: flex-end; */
+	justify-content: space-around;
 }
 .switch button {
 	display: none;

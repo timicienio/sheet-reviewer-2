@@ -260,7 +260,7 @@ export default function Configure() {
 										sheetColumns={sheetColumns}
 										sheet={data[selectedSheetIndex]}
 									/>
-									<div id='configurator-confirm'>
+									<div className='configurator-confirm'>
 										<Button
 											variant='success'
 											disabled={
@@ -290,7 +290,7 @@ export default function Configure() {
 										dispatch={scoreButtonDispatch}
 										sheetColumns={sheetColumns}
 									/>
-									<div id='configurator-confirm'>
+									<div className='configurator-confirm'>
 										<Button
 											variant='secondary'
 											onClick={onBackFromScore}
@@ -314,8 +314,8 @@ export default function Configure() {
 										scoreButton: scoreButtonState,
 										layout: layoutState,
 									}}
-								></DoneConfigure>
-								<div id='configurator-confirm'>
+								/>
+								<div className='configurator-confirm'>
 									<Button
 										variant='secondary'
 										onClick={onBackFromDone}
