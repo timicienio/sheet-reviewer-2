@@ -1,3 +1,5 @@
 # Sheet Reviewer 2
-Deploed Link:
-## How to use
+Deployed Link:
+## How To Use
+## Use Examples
+## Report a Problem
