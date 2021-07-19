@@ -63,7 +63,7 @@ export default function LayoutConfigurator({
 					setCurrentRowIndex={setCurrentRowIndex}
 					numberRows={sheet ? sheet.data.length : 0}
 				/>
-				<BsInfoCircleFill
+				{/* <BsInfoCircleFill
 					data-tip
 					data-for='range-tooltip'
 					style={{ fontSize: '0.8rem' }}
@@ -73,7 +73,7 @@ export default function LayoutConfigurator({
 						Select different rows to preview the review experience
 						with your data.
 					</span>
-				</ReactTooltip>
+				</ReactTooltip> */}
 				{state.map((row, rowIndex) => (
 					<Row>
 						{row.map((col, colIndex) => (

@@ -8,7 +8,6 @@ function linesToParagraphs(lines) {
 	));
 }
 export default function LayoutCard({ title, text }) {
-	console.log(text);
 	return (
 		<Card className='layout-card'>
 			<Card.Title>{title}</Card.Title>

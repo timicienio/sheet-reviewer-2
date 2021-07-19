@@ -1,8 +1,9 @@
 import { Card, Col, Row, Form, Button } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 
-export default function StartMenu() {
+export default function StartMenu({ config, setConfig }) {
 	const history = useHistory();
+
 	return (
 		<Row className='start-menu'>
 			<Col>
@@ -43,11 +44,18 @@ export default function StartMenu() {
 									// type='email'
 									placeholder='Paste configuration (in JSON format)'
 									as='textarea'
+									value={config}
+									onChange={e => setConfig(e.target.value)}
 									rows={3}
 								/>
 							</Form.Group>
 						</Form>
-						<Button variant='primary'>Submit</Button>
+						<Button
+							variant='primary'
+							onClick={() => history.push('/reviewer')}
+						>
+							Submit
+						</Button>
 					</Card.Body>
 				</Card>
 			</Col>

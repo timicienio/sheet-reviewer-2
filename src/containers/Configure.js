@@ -310,6 +310,7 @@ export default function Configure() {
 								<DoneConfigure
 									config={{
 										sheetId: sheetId,
+										sheetIndex: selectedSheetIndex,
 										scoreButton: scoreButtonState,
 										layout: layoutState,
 									}}
@@ -325,7 +326,7 @@ export default function Configure() {
 										variant='success'
 										onClick={onGoToHome}
 									>
-										Back to Home page
+										Back to home page
 									</Button>
 								</div>
 							</Route>

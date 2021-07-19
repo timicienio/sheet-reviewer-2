@@ -7,7 +7,7 @@ export default function RowSelector({
 	numberRows,
 }) {
 	return (
-		<Row>
+		<Row className='row-selector'>
 			<Col>
 				<ButtonGroup>
 					<Button
@@ -35,7 +35,7 @@ export default function RowSelector({
 					</Button>
 				</ButtonGroup>
 			</Col>
-			<Col xs={4}>
+			<Col>
 				<h4>
 					Row #{currentRowIndex + 1} of {numberRows}
 				</h4>
