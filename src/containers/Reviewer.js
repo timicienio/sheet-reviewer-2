@@ -235,13 +235,6 @@ export default function Reviewer({ config }) {
 					</Container>
 				</Container>
 			)}
-			<Row>
-				<Col>
-					<p className='footer'>
-						Fine work by desk2000 | 總召對不起我不會再遲到了
-					</p>
-				</Col>
-			</Row>
 		</>
 	);
 }

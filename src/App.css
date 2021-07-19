@@ -71,17 +71,18 @@
 }
 
 .start-menu {
-	height: 88vh;
+	height: 70vh;
+	/* height: fit-content; */
 }
 
 .start-menu-card {
 	margin: 0;
-	position: absolute;
+	/* position: absolute; */
 	top: 40vh;
 	-ms-transform: translateY(-50%);
 	transform: translateY(-50%);
 
-	height: 45%;
+	height: 45vh;
 
 	/* border: 3px solid green; */
 	padding: 10px;

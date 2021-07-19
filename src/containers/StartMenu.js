@@ -6,7 +6,7 @@ export default function StartMenu({ config, setConfig }) {
 
 	return (
 		<Row className='start-menu'>
-			<Col>
+			<Col className='start-menu-col'>
 				<Card className='start-menu-card'>
 					<Card.Body className='start-menu-card-body'>
 						<Card.Title>
@@ -29,7 +29,7 @@ export default function StartMenu({ config, setConfig }) {
 					</Card.Body>
 				</Card>
 			</Col>
-			<Col>
+			<Col className='start-menu-col'>
 				<Card className='start-menu-card'>
 					<Card.Body className='start-menu-card-body'>
 						<Card.Title>
