@@ -15,8 +15,8 @@ export default function Reviewer({ config }) {
 	// const [sheetId, setSheetId] = useState('');
 	// const [sheetIndex, setSheetIndex] = useState(-1);
 
-	const [doc, setDoc] = useState({});
-	const [sheet, setSheet] = useState({});
+	// const [doc, setDoc] = useState({});
+	// const [sheet, setSheet] = useState({});
 	const [rows, setRows] = useState([]);
 
 	const [loading, setLoading] = useState(true);
@@ -62,8 +62,8 @@ export default function Reviewer({ config }) {
 				setScoreButton(scoreButton);
 				// setSheetId(sheetId);
 				// setSheetIndex(sheetIndex);
-				setDoc(doc);
-				setSheet(doc.sheetsByIndex[sheetIndex]);
+				// setDoc(doc);
+				// setSheet(doc.sheetsByIndex[sheetIndex]);
 				setRows(
 					await (
 						await doc.sheetsByIndex[sheetIndex].getRows()
