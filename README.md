@@ -1,5 +1,5 @@
 # Sheet Reviewer 2
-Deployed Link:
+Deployed Link: https://sheet-reviewer-2.herokuapp.com/
 Reviewer for Google Sheet Data. Suitable for reviewing Google Form responses, activity application, etc.
 ## How To Use 
 1. Visit website.
