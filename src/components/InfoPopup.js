@@ -9,6 +9,12 @@ export default function InfoPopUp({ show, onHide, version }) {
 			</Modal.Header>
 			<Modal.Body>
 				<p>Version {version}</p>
+				<p>{'Fine work by timicienio.'}</p>
+				<p>
+					<a href='https://github.com/timicienio'>
+						timicienio@github
+					</a>
+				</p>
 			</Modal.Body>
 		</Modal>
 	);
