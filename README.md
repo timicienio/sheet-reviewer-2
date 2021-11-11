@@ -1,6 +1,6 @@
 # Sheet Reviewer 2
 ## Description
-Lightweit online reviewer for Google Sheet Data. Suitable for reviewing form responses, online quiz answers, etc.
+Lightweight online reviewer for Google Sheet Data. Suitable for reviewing form responses, online quiz answers, etc.
 ## How To Use 
 1. Visit website from [deployed link](https://sheet-reviewer-2.herokuapp.com/).
 2. Click "Create new reviewer configuration".
