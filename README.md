@@ -7,5 +7,5 @@ Lightweight online reviewer for Google Sheet Data. Suitable for reviewing form r
 3. Configure the reviewer as instructed.
 4. Paste the configuration string in the home page and submit.
 5. Enjoy reviewing!
-## Use Examples
 ## Report a Problem
+Open an issue in this repo.
