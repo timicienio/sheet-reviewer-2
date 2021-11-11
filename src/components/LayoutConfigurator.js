@@ -10,8 +10,8 @@ import {
 } from 'react-bootstrap';
 import LayoutCardConfigurable from './LayoutCardConfigurable';
 import RowSelector from './RowSelector';
-import { BsInfoCircleFill } from 'react-icons/bs';
-import ReactTooltip from 'react-tooltip';
+// import { BsInfoCircleFill } from 'react-icons/bs';
+// import ReactTooltip from 'react-tooltip';
 
 export default function LayoutConfigurator({
 	state,

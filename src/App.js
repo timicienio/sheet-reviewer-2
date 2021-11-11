@@ -18,7 +18,7 @@ const App = () => {
 	return (
 		<div className='App'>
 			<InfoPopUp
-				version='2.0 alpha 2'
+				version='2.0.0'
 				show={showInfo}
 				onHide={() => {
 					setShowInfo(false);
@@ -50,7 +50,9 @@ const App = () => {
 			</Container>
 
 			<p className='footer'>
-				Fine work by desk2000 | 總召對不起我不會再遲到了
+				Fine work by{' '}
+				<a href='https://github.com/timicienio'>timicienio</a> |
+				總召對不起我不會再遲到了
 			</p>
 		</div>
 	);

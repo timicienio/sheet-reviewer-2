@@ -110,7 +110,7 @@ export default function ScoreButtonConfigurator({
 						</InputGroup.Append>
 					</InputGroup>
 
-					{state[editingIndex].type === 'Number' && (
+					{state[editingIndex]?.type === 'Number' && (
 						<>
 							<h5>
 								Number range{' '}
@@ -139,12 +139,12 @@ export default function ScoreButtonConfigurator({
 										onClick={() =>
 											onChangeRangeLower(
 												editingIndex,
-												state[editingIndex].lower + 1
+												state[editingIndex]?.lower + 1
 											)
 										}
 										disabled={
-											state[editingIndex].upper -
-												state[editingIndex].lower ===
+											state[editingIndex]?.upper -
+												state[editingIndex]?.lower ===
 											1
 										}
 									>
@@ -155,12 +155,12 @@ export default function ScoreButtonConfigurator({
 										onClick={() =>
 											onChangeRangeLower(
 												editingIndex,
-												state[editingIndex].lower - 1
+												state[editingIndex]?.lower - 1
 											)
 										}
 										disabled={
-											state[editingIndex].upper -
-												state[editingIndex].lower >=
+											state[editingIndex]?.upper -
+												state[editingIndex]?.lower >=
 											10
 										}
 									>
@@ -172,11 +172,11 @@ export default function ScoreButtonConfigurator({
 									style={{ margin: '0 10px 0 10px' }}
 								>
 									<ListGroup.Item>
-										{state[editingIndex].lower}
+										{state[editingIndex]?.lower}
 									</ListGroup.Item>
 									<ListGroup.Item> to </ListGroup.Item>
 									<ListGroup.Item>
-										{state[editingIndex].upper}
+										{state[editingIndex]?.upper}
 									</ListGroup.Item>
 								</ListGroup>{' '}
 								<ButtonGroup>
@@ -184,12 +184,12 @@ export default function ScoreButtonConfigurator({
 										onClick={() =>
 											onChangeRangeUpper(
 												editingIndex,
-												state[editingIndex].upper + 1
+												state[editingIndex]?.upper + 1
 											)
 										}
 										disabled={
-											state[editingIndex].upper -
-												state[editingIndex].lower >=
+											state[editingIndex]?.upper -
+												state[editingIndex]?.lower >=
 											10
 										}
 									>
@@ -199,12 +199,12 @@ export default function ScoreButtonConfigurator({
 										onClick={() =>
 											onChangeRangeUpper(
 												editingIndex,
-												state[editingIndex].upper - 1
+												state[editingIndex]?.upper - 1
 											)
 										}
 										disabled={
-											state[editingIndex].upper -
-												state[editingIndex].lower ===
+											state[editingIndex]?.upper -
+												state[editingIndex]?.lower ===
 											1
 										}
 									>
@@ -229,8 +229,8 @@ export default function ScoreButtonConfigurator({
 						</ReactTooltip>
 						<Dropdown style={{ marginTop: '10px' }}>
 							<Dropdown.Toggle variant='secondary'>
-								{state[editingIndex].sheetColumn
-									? state[editingIndex].sheetColumn
+								{state[editingIndex]?.sheetColumn
+									? state[editingIndex]?.sheetColumn
 									: 'None'}
 							</Dropdown.Toggle>
 							<Dropdown.Menu>
