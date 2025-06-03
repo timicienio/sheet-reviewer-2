@@ -1,5 +1,5 @@
-import "./App.css";
-import "bootswatch/dist/darkly/bootstrap.min.css";
+// import "./App.css";
+// import "bootswatch/dist/darkly/bootstrap.min.css";
 import { Route, Redirect, Switch } from "react-router-dom";
 import { Button, Container, Navbar } from "react-bootstrap";
 import StartMenu from "./containers/StartMenu";
